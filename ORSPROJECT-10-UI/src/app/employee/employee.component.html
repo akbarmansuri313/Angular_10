@@ -1,0 +1,125 @@
+<div class="row" style="padding-top:8%; padding-bottom:5%;
+  background:url(assets/files/wall.jpg) no-repeat center center;
+  background-size: cover; width:100%;  min-height:100vh;">
+
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body input-group-addon grad">
+
+                <form name="empForm">
+
+                    <h2 *ngIf="!form.data.id" class="text-primary font-weight-bold text-center">
+                        Add Employee
+                    </h2>
+
+                    <h2 *ngIf="form.data.id > 0" class="text-primary font-weight-bold text-center">
+                        Update Employee
+                    </h2>
+
+                    <!-- Success Message -->
+                    <div *ngIf="!form.error && form.message" class="alert alert-success">
+                        {{form.message}}
+                    </div>
+
+                    <!-- Error Message -->
+                    <div *ngIf="form.error && form.message" class="alert alert-danger">
+                        {{form.message}}
+                    </div>
+
+                    <!-- Employee Code -->
+                    <div class="form-group">
+                        <span><b>Employee Code</b></span>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-id-badge"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="employeeCode" [(ngModel)]="form.data.employeeCode"
+                                    class="form-control" placeholder="Enter Employee Code">
+                            </div>
+                        </div>
+                        <span style="color: red;">{{form.inputerror.employeeCode}}</span>
+                    </div>
+
+                    <!-- Employee Name -->
+                    <div class="form-group">
+                        <span><b>Employee Name</b></span>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="employeeName" [(ngModel)]="form.data.employeeName"
+                                    class="form-control" placeholder="Enter Employee Name">
+                            </div>
+                        </div>
+                        <span style="color: red;">{{form.inputerror.employeeName}}</span>
+                    </div>
+
+                    <!-- Designation -->
+                    <div class="form-group">
+                        <span><b>Designation</b></span>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-briefcase"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="designation" [(ngModel)]="form.data.designation"
+                                    class="form-control" placeholder="Enter Designation">
+                            </div>
+                        </div>
+                        <span style="color: red;">{{form.inputerror.designation}}</span>
+                    </div>
+
+                    <!-- Status -->
+                    <div class="form-group">
+                        <span><b>Status</b></span>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-toggle-on"></i>
+                                    </div>
+                                </div>
+                                <select class="form-control" name="status" [(ngModel)]="form.data.status">
+                                    <option value="undefined">Select Status</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+                        <span style="color: red;">{{form.inputerror.status}}</span>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="row pt-2 pl-2 pb-3">
+                        <div class="col-md-3"></div>
+
+                        <button *ngIf="!form.data.id" (click)="submit()" class="btn btn-success mr-2">
+                            Save
+                        </button>
+
+                        <button *ngIf="form.data.id > 0" (click)="submit()" class="btn btn-success mr-2">
+                            Update
+                        </button>
+
+                        <a class="btn btn-warning" [routerLink]="['/employeeList']">
+                            List
+                        </a>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,166 @@
+<div class="row" style="padding-top:8%; padding-bottom:5%;
+  background:url(assets/files/wall.jpg) no-repeat center center;
+  background-size: cover; width:100%; min-height:100vh;">
+
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body input-group-addon grad">
+
+                <form name="historyForm">
+
+                    <!-- Heading -->
+                    <h2 *ngIf="!form.data.id" class="text-primary font-weight-bold text-center">
+                        Add Login History
+                    </h2>
+
+                    <h2 *ngIf="form.data.id > 0" class="text-primary font-weight-bold text-center">
+                        Update Login History
+                    </h2>
+
+                    <!-- Success Message -->
+                    <div *ngIf="!form.error && form.message" class="alert alert-success">
+                        {{form.message}}
+                    </div>
+
+                    <!-- Error Message -->
+                    <div *ngIf="form.error && form.message" class="alert alert-danger">
+                        {{form.message}}
+                    </div>
+
+                    <!-- History Code -->
+                    <div class="form-group">
+                        <span><b>History Code</b></span>
+
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-code"></i>
+                                    </div>
+                                </div>
+
+                                <input type="text" name="historyCode" [(ngModel)]="form.data.historyCode"
+                                    class="form-control" placeholder="Enter History Code">
+
+                            </div>
+                        </div>
+
+                        <span style="color:red;">
+                            {{form.inputerror.historyCode}}
+                        </span>
+                    </div>
+
+                    <!-- User Name -->
+                    <div class="form-group">
+                        <span><b>User Name</b></span>
+
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </div>
+
+                                <input type="text" name="userName" [(ngModel)]="form.data.userName" class="form-control"
+                                    placeholder="Enter User Name">
+
+                            </div>
+                        </div>
+
+                        <span style="color:red;">
+                            {{form.inputerror.userName}}
+                        </span>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="form-group">
+                        <span><b>Date</b></span>
+
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                </div>
+
+                                <input type="date" name="date" [(ngModel)]="form.data.date" class="form-control">
+
+                            </div>
+                        </div>
+
+                        <span style="color:red;">
+                            {{form.inputerror.Date}}
+                        </span>
+                    </div>
+
+                    <!-- Status -->
+                    <div class="form-group">
+                        <span><b>Status</b></span>
+
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-toggle-on"></i>
+                                    </div>
+                                </div>
+
+                                <select class="form-control" name="status" [(ngModel)]="form.data.status">
+
+                                    <option value="undefined">Select Status</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+
+
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <span style="color:red;">
+                            {{form.inputerror.status}}
+                        </span>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="row pt-2 pl-2 pb-3">
+
+                        <div class="col-md-3"></div>
+
+                        <!-- Save -->
+                        <button *ngIf="!form.data.id" (click)="submit()" class="btn btn-success mr-2">
+                            Save
+                        </button>
+
+                        <!-- Reset -->
+                        <button *ngIf="!form.data.id" (click)="reset()" class="btn btn-dark mr-2">
+                            Reset
+                        </button>
+
+                        <!-- Update -->
+                        <button *ngIf="form.data.id > 0" (click)="submit()" class="btn btn-success mr-2">
+                            Update
+                        </button>
+
+                        <!-- List -->
+                        <a class="btn btn-warning" [routerLink]="['/loginhistoryList']">
+                            List
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>

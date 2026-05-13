@@ -1,0 +1,203 @@
+<div class="content-wrapper" style="padding-top: 7%;
+    background: url(assets/files/wall.jpg) no-repeat center center;
+    background-size: cover;
+    width:auto;
+    min-height:100vh;">
+
+    <div class="container-fluid">
+
+        <!-- Error Message -->
+        <div *ngIf="form.message && form.error === true"
+            class="alert alert-danger alert-dismissible text-center mx-auto"
+            style="max-width: 600px; width: 80%; margin-bottom: 15px;">
+
+            <button type="button" class="close" data-dismiss="alert">
+                &times;
+            </button>
+
+            {{form.message}}
+
+        </div>
+
+        <!-- Success Message -->
+        <div *ngIf="form.message && form.error === false"
+            class="alert alert-success alert-dismissible text-center mx-auto"
+            style="max-width: 600px; width: 80%; margin-bottom: 15px;">
+
+            <button type="button" class="close" data-dismiss="alert">
+                &times;
+            </button>
+
+            {{form.message}}
+
+        </div>
+
+        <!-- Panel -->
+        <div class="panel panel-primary" *ngIf="form.list.length > 0">
+
+            <!-- Heading -->
+            <div class="panel-heading text-center" style="height:50px;">
+                <h2 class="text-primary font-weight-bold">
+                    Login History List
+                </h2>
+            </div>
+
+            <!-- Search Section -->
+            <div class="row align-items-center mb-3">
+
+                <!-- Search History Code -->
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" [(ngModel)]="form.searchParams.historyCode"
+                        placeholder="Search History Code">
+                </div>
+
+                <!-- Search User Name -->
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" [(ngModel)]="form.searchParams.userName"
+                        placeholder="Search User Name">
+                </div>
+
+                <!-- Buttons -->
+                <div class="col-sm-3 d-flex justify-content-end flex-wrap">
+
+                    <button (click)="search()" class="btn btn-primary">
+                        Search
+                    </button>
+
+                    &nbsp;&nbsp;
+
+                    <button (click)="reset()" class="btn btn-secondary">
+                        Reset
+                    </button>
+
+                    &nbsp;&nbsp;
+
+                    <button (click)="forward('/loginhistory')" class="btn btn-success">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-dark table-hover font-weight-bold">
+
+                    <!-- Table Heading -->
+                    <thead class="thead-dark text-uppercase text-center">
+
+                        <tr>
+
+                            <th>
+                                <input type="checkbox" [(ngModel)]="isMasterSel" (change)="checkUncheckAll($event)" />
+                            </th>
+
+                            <th>S.No</th>
+                            <th>History Code</th>
+                            <th>User Name</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Edit</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <!-- Table Body -->
+                    <tbody class="text-center">
+
+                        <tr *ngFor="let h of form.list; let i = index">
+
+                            <!-- Checkbox -->
+                            <td>
+                                <input type="checkbox" #checkboxes (change)="checklistUpdate()" [id]="h.id"
+                                    [value]="isMasterSel">
+                            </td>
+
+                            <!-- Serial Number -->
+                            <td>
+                                {{(form.pageNo*5)+i+1}}
+                            </td>
+
+                            <!-- Data -->
+                            <td>{{ h.historyCode }}</td>
+                            <td>{{ h.userName }}</td>
+                            <td>{{ h.date }}</td>
+                            <td>{{ h.status }}</td>
+
+                            <!-- Edit Button -->
+                            <td>
+
+                                <button class="fa fa-edit text-primary" (click)="forward('/loginhistory/' + h.id)"
+                                    style="cursor:pointer;
+                                    border:none;
+                                    background:none;">
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="row mt-2 align-items-center">
+
+                <!-- Previous -->
+                <div class="col text-left">
+
+                    <button (click)="previous()" [disabled]="form.pageNo == 0" class="btn btn-warning">
+
+                        Previous
+
+                    </button>
+
+                </div>
+
+                <!-- Delete -->
+                <div class="col-10 text-center">
+
+                    <button (click)="deleteMany()" class="btn btn-danger">
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+                <!-- Next -->
+                <div class="col text-right">
+
+                    <button (click)="next()" [disabled]="form.nextListSize == 0" class="btn btn-info">
+
+                        Next
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center">
+
+            <button *ngIf="form.list.length == 0" (click)="reset()" class="btn btn-warning">
+
+                Back
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

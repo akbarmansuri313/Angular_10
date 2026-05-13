@@ -1,0 +1,137 @@
+<div class="row" style="padding-top:8%; padding-bottom:5%;
+  background:url(assets/files/wall.jpg) no-repeat center center;
+  background-size: cover; width:100%; min-height:100vh;">
+
+  <div class="col-sm-4"></div>
+
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body input-group-addon grad">
+
+        <form name="verifyForm">
+
+          <h2 *ngIf="!form.data.id" class="text-primary font-weight-bold text-center">
+            Add Mobile
+          </h2>
+
+          <h2 *ngIf="form.data.id > 0" class="text-primary font-weight-bold text-center">
+            Mobile Verification
+          </h2>
+
+          <!-- Success Message -->
+          <div *ngIf="!form.error && form.message" class="alert alert-success">
+            {{form.message}}
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="form.error && form.message" class="alert alert-danger">
+            {{form.message}}
+          </div>
+
+          <!-- Verification Code -->
+          <div class="form-group">
+            <span><b>Verification Code</b></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-key"></i>
+                  </div>
+                </div>
+                <input type="text" name="verificationCode"
+                  [(ngModel)]="form.data.verificationCode"
+                  class="form-control"
+                  placeholder="Enter Verification Code">
+              </div>
+            </div>
+            <span style="color:red;">{{form.inputerror.verificationCode}}</span>
+          </div>
+
+          <!-- Mobile Number -->
+          <div class="form-group">
+            <span><b>Mobile Number</b></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-phone"></i>
+                  </div>
+                </div>
+                <input type="text" name="mobileNumber"
+                  [(ngModel)]="form.data.mobileNumber"
+                  class="form-control"
+                  placeholder="Enter Mobile Number">
+              </div>
+            </div>
+            <span style="color:red;">{{form.inputerror.mobileNumber}}</span>
+          </div>
+
+          <!-- OTP -->
+          <div class="form-group">
+            <span><b>OTP</b></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-lock"></i>
+                  </div>
+                </div>
+                <input type="text" name="otp"
+                  [(ngModel)]="form.data.otp"
+                  class="form-control"
+                  placeholder="Enter OTP">
+              </div>
+            </div>
+            <span style="color:red;">{{form.inputerror.otp}}</span>
+          </div>
+
+          <!-- Status -->
+          <div class="form-group">
+            <span><b>Status</b></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-toggle-on"></i>
+                  </div>
+                </div>
+                <select class="form-control" name="status"
+                  [(ngModel)]="form.data.status">
+                  <option value="undefined">Select Status</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Verified">Verified</option>
+                  <option value="Failed">Failed</option>
+                </select>
+              </div>
+            </div>
+            <span style="color:red;">{{form.inputerror.status}}</span>
+          </div>
+
+          <!-- Buttons -->
+          <div class="row pt-2 pl-2 pb-3">
+            <div class="col-md-3"></div>
+
+            <button *ngIf="!form.data.id" (click)="submit()" class="btn btn-success mr-2">
+              Save
+            </button>
+
+            <button *ngIf="!form.data.id" (click)="reset()" class="btn btn-dark mr-2">
+              Reset
+            </button>
+
+            <button *ngIf="form.data.id > 0" (click)="submit()" class="btn btn-success mr-2">
+              Update
+            </button>
+
+            <a class="btn btn-warning" [routerLink]="['/mobileList']">
+              List
+            </a>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</div>
