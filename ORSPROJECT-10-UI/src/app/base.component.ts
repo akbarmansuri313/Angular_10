@@ -125,6 +125,8 @@ export class BaseCtl implements OnInit {
         this.serviceLocator.httpService.post("http://localhost:8080/User/profilePic/" + this.form.data.id, formData, function (res: any) {
 
             if (res.success) {
+
+              _self.form.data.file =   res.result;
                    console.log("File to Upload")
             }
             console.log("file Not found");

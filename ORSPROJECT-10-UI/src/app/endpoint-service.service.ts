@@ -28,6 +28,7 @@ export class EndpointServiceService {
   public EMPLOYEE = this.SERVER_URL + "/Employee";
   public MOBILE = this.SERVER_URL + "/Mobile";
   public LOGINHISTORY = this.SERVER_URL + "/Login";
-   public QRSCANNER = this.SERVER_URL + "/Qrscanner";
+  public QRSCANNER = this.SERVER_URL + "/Qrscanner";
+  public PROFILE = this.SERVER_URL + "/Profile";
 
 }

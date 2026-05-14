@@ -23,10 +23,8 @@ import { RoleListComponent } from './role/role-list.component';
 import { UserListComponent } from './user/user-list.component';
 import { MarksheetListComponent } from './marksheet/marksheet-list.component';
 import { FacultyListComponent } from './faculty/faculty-list.component';
-
 import { ChangePasswordComponent } from './user/change-password.component';
 import { MyprofileComponent } from './user/myprofile.component';
-
 import { MarksheetMeritListComponent } from './marksheet/marksheet-merit-list.component';
 import { JasperComponent } from './jasper/jasper.component';
 import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
@@ -43,6 +41,8 @@ import { LoginhistoryComponent } from './loginhistory/loginhistory.component';
 import { LoginhistoryListComponent } from './loginhistory/loginhistory-list.component';
 import { QrscannerComponent } from './qrscanner/qrscanner.component';
 import { QrscannerListComponent } from './qrscanner/qrscanner-list.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileListComponent } from './profile/profile-list.component';
 
 
 
@@ -305,6 +305,19 @@ const routes: Routes = [
   {
     path: 'qrscanner/:id',
     component: QrscannerComponent
+  },
+
+   {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'profileList',
+    component: ProfileListComponent
+  },
+  {
+    path: 'profile/:id',
+    component: ProfileComponent
   },
 
 ];

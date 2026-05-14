@@ -58,6 +58,8 @@ import { LoginhistoryComponent } from './loginhistory/loginhistory.component';
 import { LoginhistoryListComponent } from './loginhistory/loginhistory-list.component';
 import { QrscannerComponent } from './qrscanner/qrscanner.component';
 import { QrscannerListComponent } from './qrscanner/qrscanner-list.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileListComponent } from './profile/profile-list.component';
 
 
 
@@ -111,6 +113,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginhistoryListComponent,
     QrscannerComponent,
     QrscannerListComponent,
+    ProfileComponent,
+    ProfileListComponent,
 
 
   ],

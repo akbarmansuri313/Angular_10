@@ -1,6 +1,6 @@
 <div class="row" style="padding-top:8%; padding-bottom:5%;
-  background:url(assets/files/wall.jpg) no-repeat center center;
-  background-size: cover; width:100%; min-height:100vh;">
+background:url(assets/files/wall.jpg) no-repeat center center;
+background-size: cover; width:100%; min-height:100vh;">
 
     <div class="col-sm-4"></div>
 
@@ -8,15 +8,15 @@
         <div class="card">
             <div class="card-body input-group-addon grad">
 
-                <form name="scanHistoryForm">
+                <form name="profileForm">
 
                     <!-- Heading -->
                     <h2 *ngIf="!form.data.id" class="text-primary font-weight-bold text-center">
-                        Add Scan 
+                        Add Profile
                     </h2>
 
                     <h2 *ngIf="form.data.id > 0" class="text-primary font-weight-bold text-center">
-                        Update Scan 
+                        Update Profile
                     </h2>
 
                     <!-- Success Message -->
@@ -29,33 +29,33 @@
                         {{form.message}}
                     </div>
 
-                    <!-- QR Code -->
+                    <!-- Profile Code -->
                     <div class="form-group">
-                        <span><b> Code</b></span>
+                        <span><b>Profile Code</b></span>
 
                         <div class="col-sm-12">
                             <div class="input-group">
 
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
-                                        <i class="fa fa-qrcode"></i>
+                                        <i class="fa fa-id-card"></i>
                                     </div>
                                 </div>
 
-                                <input type="text" name="qrCode" [(ngModel)]="form.data.qrCode" class="form-control"
-                                    placeholder="Enter  Code">
+                                <input type="text" name="profileCode" [(ngModel)]="form.data.profileCode"
+                                    class="form-control" placeholder="Enter Profile Code">
 
                             </div>
                         </div>
 
                         <span style="color:red;">
-                            {{form.inputerror.qrCode}}
+                            {{form.inputerror.profileCode}}
                         </span>
                     </div>
 
-                    <!-- Scanned By -->
+                    <!-- User Name -->
                     <div class="form-group">
-                        <span><b>Scanned By</b></span>
+                        <span><b>User Name</b></span>
 
                         <div class="col-sm-12">
                             <div class="input-group">
@@ -66,38 +66,38 @@
                                     </div>
                                 </div>
 
-                                <input type="text" name="scannedBy" [(ngModel)]="form.data.scannedBy"
-                                    class="form-control" placeholder="Enter  Name">
+                                <input type="text" name="userName" [(ngModel)]="form.data.userName" class="form-control"
+                                    placeholder="Enter User Name">
 
                             </div>
                         </div>
 
                         <span style="color:red;">
-                            {{form.inputerror.scannedBy}}
+                            {{form.inputerror.userName}}
                         </span>
                     </div>
 
-                    <!-- Scan Date -->
+                    <!-- Mobile Number -->
                     <div class="form-group">
-                        <span><b>Scan Date</b></span>
+                        <span><b>Mobile Number</b></span>
 
                         <div class="col-sm-12">
                             <div class="input-group">
 
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
-                                        <i class="fa fa-calendar"></i>
+                                        <i class="fa fa-phone"></i>
                                     </div>
                                 </div>
 
-                                <input type="date" name="scanDate" [(ngModel)]="form.data.scanDate"
-                                    [ngModel]="form.data.scanDate | date:'yyyy-MM-dd'" class="form-control">
+                                <input type="text" name="mobileNumber" [(ngModel)]="form.data.mobileNumber"
+                                    class="form-control" placeholder="Enter Mobile Number">
 
                             </div>
                         </div>
 
                         <span style="color:red;">
-                            {{form.inputerror.scanDate}}
+                            {{form.inputerror.mobileNumber}}
                         </span>
                     </div>
 
@@ -116,7 +116,7 @@
 
                                 <select class="form-control" name="status" [(ngModel)]="form.data.status">
 
-                                    <option value="undefined">Select Status</option>
+                                    <option value="">Select Status</option>
                                     <option value="Active">Active</option>
                                     <option value="Inactive">Inactive</option>
 
@@ -136,25 +136,25 @@
                         <div class="col-md-3"></div>
 
                         <!-- Save -->
-                        <button *ngIf="!form.data.id" (click)="submit()" class="btn btn-success mr-2">
+                        <button *ngIf="!form.data.id" type="button" (click)="submit()" class="btn btn-success mr-2">
 
                             Save
                         </button>
 
                         <!-- Reset -->
-                        <button *ngIf="!form.data.id" (click)="reset()" class="btn btn-dark mr-2">
+                        <button *ngIf="!form.data.id" type="button" (click)="reset()" class="btn btn-dark mr-2">
 
                             Reset
                         </button>
 
                         <!-- Update -->
-                        <button *ngIf="form.data.id > 0" (click)="submit()" class="btn btn-success mr-2">
+                        <button *ngIf="form.data.id > 0" type="button" (click)="submit()" class="btn btn-success mr-2">
 
                             Update
                         </button>
 
                         <!-- List -->
-                        <a class="btn btn-warning" [routerLink]="['/qrscannerList']">
+                        <a class="btn btn-warning" [routerLink]="['/profileList']">
 
                             List
                         </a>
