@@ -32,15 +32,12 @@ export class MarksheetMeritListComponent extends BaseCtl{
           _self.form.message = "No record found";
           _self.form.error = true;
         }
-        console.log("List Size",_self.form.list.length );
+        
       }else{
         _self.form.error = false;
         _self.form.message = res.result.message;
       }
-      console.log('FORM', _self.form);
+      
     });
   }
- goToLink() {
-   window.open('/jasper', '_blank');
- }
  }

@@ -43,6 +43,9 @@ import { QrscannerComponent } from './qrscanner/qrscanner.component';
 import { QrscannerListComponent } from './qrscanner/qrscanner-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileListComponent } from './profile/profile-list.component';
+import { AccountComponent } from './account/account.component';
+import { AccontListComponent } from './account/accont-list.component';
+
 
 
 
@@ -318,6 +321,19 @@ const routes: Routes = [
   {
     path: 'profile/:id',
     component: ProfileComponent
+  },
+
+    {
+    path: 'account',
+    component: AccountComponent
+  },
+  {
+    path: 'accountList',
+    component: AccontListComponent
+  },
+  {
+    path: 'account/:id',
+    component: AccountComponent
   },
 
 ];

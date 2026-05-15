@@ -6,7 +6,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './login/sign-up.component';
-
 import { FooterComponent } from './footer/footer.component';
 import { HttpServiceService } from './http-service.service';
 import { AuthServiceService } from './auth-service.service';
@@ -26,9 +25,7 @@ import { TimetableComponent } from './timetable/timetable.component';
 import { FacultyComponent } from './faculty/faculty.component';
 import { MarksheetComponent } from './marksheet/marksheet.component';
 import { UserListComponent } from './user/user-list.component';
-
 import { TimetableListComponent } from './timetable/timetable-list.component';
-
 import { SubjectListComponent } from './subject/subject-list.component';
 import { StudentListComponent } from './student/student-list.component';
 import { RoleListComponent } from './role/role-list.component';
@@ -36,12 +33,10 @@ import { MarksheetListComponent } from './marksheet/marksheet-list.component';
 import { CourseListComponent } from './course/course-list.component';
 import { CollegeListComponent } from './college/college-list.component';
 import { FacultyListComponent } from './faculty/faculty-list.component';
-
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ChangePasswordComponent } from './user/change-password.component';
 import { MyprofileComponent } from './user/myprofile.component';
-
 import { MarksheetMeritListComponent } from './marksheet/marksheet-merit-list.component';
 import { JasperComponent } from './jasper/jasper.component';
 import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
@@ -60,8 +55,8 @@ import { QrscannerComponent } from './qrscanner/qrscanner.component';
 import { QrscannerListComponent } from './qrscanner/qrscanner-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileListComponent } from './profile/profile-list.component';
-
-
+import { AccountComponent } from './account/account.component';;
+import { AccontListComponent } from './account/accont-list.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -115,8 +110,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     QrscannerListComponent,
     ProfileComponent,
     ProfileListComponent,
-
-
+    AccountComponent,
+    AccontListComponent,
   ],
   imports: [
     BrowserModule,

@@ -30,5 +30,6 @@ export class EndpointServiceService {
   public LOGINHISTORY = this.SERVER_URL + "/Login";
   public QRSCANNER = this.SERVER_URL + "/Qrscanner";
   public PROFILE = this.SERVER_URL + "/Profile";
+  public ACCOUNT = this.SERVER_URL + "/Account";
 
 }

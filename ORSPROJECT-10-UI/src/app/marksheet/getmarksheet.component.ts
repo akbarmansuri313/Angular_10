@@ -42,9 +42,6 @@ export class GetmarksheetComponent extends BaseCtl {
         _self.form.message = res.result.message;
 
       }
-
-      console.log("FORM", _self.form);
-
     });
 
   }

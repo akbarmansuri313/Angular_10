@@ -32,7 +32,7 @@ export class LoginComponent {
 
       this.form.error = true;
 
-    });
+    })
 
   }
 

@@ -166,18 +166,7 @@ export class BaseCtl implements OnInit {
         });
     }
 
-    generateReport() {
-
-        var _self = this;
-        console.log('Generating Report');
-
-        this.serviceLocator.httpService.get(_self.api.report, (res: Blob) => {
-            const url = URL.createObjectURL(res);
-            window.open(url);
-        }, 'blob');
-
-    }
-
+   
     forward(page: any) {
         this.serviceLocator.forward(page);
     }

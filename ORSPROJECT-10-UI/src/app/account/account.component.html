@@ -8,15 +8,15 @@ background-size: cover; width:100%; min-height:100vh;">
         <div class="card">
             <div class="card-body input-group-addon grad">
 
-                <form name="profileForm">
+                <form name="accountForm">
 
                     <!-- Heading -->
                     <h2 *ngIf="!form.data.id" class="text-primary font-weight-bold text-center">
-                        Add Profile
+                        Add Account
                     </h2>
 
                     <h2 *ngIf="form.data.id > 0" class="text-primary font-weight-bold text-center">
-                        Update Profile
+                        Update Account
                     </h2>
 
                     <!-- Success Message -->
@@ -29,9 +29,9 @@ background-size: cover; width:100%; min-height:100vh;">
                         {{form.message}}
                     </div>
 
-                    <!-- Profile Code -->
+                    <!-- Account Code -->
                     <div class="form-group">
-                        <span><b>Profile Code</b></span>
+                        <span><b>Account Code</b></span>
 
                         <div class="col-sm-12">
                             <div class="input-group">
@@ -42,14 +42,14 @@ background-size: cover; width:100%; min-height:100vh;">
                                     </div>
                                 </div>
 
-                                <input type="text" name="profileCode" [(ngModel)]="form.data.profileCode"
-                                    class="form-control" placeholder="Enter Profile Code">
+                                <input type="text" name="accountCode" [(ngModel)]="form.data.accountCode"
+                                    class="form-control" placeholder="Enter Account Code">
 
                             </div>
                         </div>
 
                         <span style="color:red;">
-                            {{form.inputerror.profileCode}}
+                            {{form.inputerror.accountCode}}
                         </span>
                     </div>
 
@@ -77,27 +77,33 @@ background-size: cover; width:100%; min-height:100vh;">
                         </span>
                     </div>
 
-                    <!-- Mobile Number -->
+                    <!-- Account Type -->
                     <div class="form-group">
-                        <span><b>Mobile Number</b></span>
+                        <span><b>Account Type</b></span>
 
                         <div class="col-sm-12">
                             <div class="input-group">
 
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
-                                        <i class="fa fa-phone"></i>
+                                        <i class="fa fa-list"></i>
                                     </div>
                                 </div>
 
-                                <input type="text" name="mobileNumber" [(ngModel)]="form.data.mobileNumber"
-                                    class="form-control" placeholder="Enter Mobile Number">
+                                <select class="form-control" name="accountType" [(ngModel)]="form.data.accountType">
+
+                                    <option value="undefined">Select Account Type</option>
+                                    <option value="Saving">Saving</option>
+                                    <option value="Current">Current</option>
+                                    <option value="Salary">Salary</option>
+
+                                </select>
 
                             </div>
                         </div>
 
                         <span style="color:red;">
-                            {{form.inputerror.mobileNumber}}
+                            {{form.inputerror.accountType}}
                         </span>
                     </div>
 
@@ -154,7 +160,7 @@ background-size: cover; width:100%; min-height:100vh;">
                         </button>
 
                         <!-- List -->
-                        <a class="btn btn-warning" [routerLink]="['/profileList']">
+                        <a class="btn btn-warning" [routerLink]="['/accountList']">
 
                             List
                         </a>
