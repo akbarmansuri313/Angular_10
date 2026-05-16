@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
   style="background-image: linear-gradient(to bottom right, rgb(223, 212, 212), rgb(31, 124, 148));">
 
@@ -15,12 +13,13 @@
       <option value="hi">{{ 'LocaleSelect.Hindi' | translate }}</option>
     </select>
 
-    <!-- Mobile Toggle -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarContent"  style="display:block;">
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+     </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarContent">
 
         <!-- Left Menu (Logged-in User) -->
       <ul class="navbar-nav flex-wrap w-100" *ngIf="isLogin()" >
@@ -247,6 +246,18 @@
                 <i class="fa fa-plus"></i> Add Account Status</a></li>
             <li><a class="dropdown-item" [routerLink]="['/accountList']">
                 <i class="fa fa-list"></i> Account Status List</a></li>
+          </ul>
+        </li>
+
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+            <i class="fa fa-calendar"></i> NFT
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['/nft']">
+                <i class="fa fa-plus"></i> Add Nft </a></li>
+            <li><a class="dropdown-item" [routerLink]="['/nftList']">
+                <i class="fa fa-list"></i> Nft List</a></li>
           </ul>
         </li>
 

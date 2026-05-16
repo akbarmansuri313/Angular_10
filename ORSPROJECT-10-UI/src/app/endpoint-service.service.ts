@@ -31,5 +31,6 @@ export class EndpointServiceService {
   public QRSCANNER = this.SERVER_URL + "/Qrscanner";
   public PROFILE = this.SERVER_URL + "/Profile";
   public ACCOUNT = this.SERVER_URL + "/Account";
+  public NFTASSET = this.SERVER_URL + "/Nft";
 
 }

@@ -57,6 +57,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileListComponent } from './profile/profile-list.component';
 import { AccountComponent } from './account/account.component';;
 import { AccontListComponent } from './account/accont-list.component';
+import { NftassetComponent } from './nftasset/nftasset.component';
+import { NftassetListComponent } from './nftasset/nftasset-list.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -112,6 +114,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProfileListComponent,
     AccountComponent,
     AccontListComponent,
+    NftassetComponent,
+    NftassetListComponent,
   ],
   imports: [
     BrowserModule,

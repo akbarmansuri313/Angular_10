@@ -45,8 +45,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileListComponent } from './profile/profile-list.component';
 import { AccountComponent } from './account/account.component';
 import { AccontListComponent } from './account/accont-list.component';
-
-
+import { NftassetComponent } from './nftasset/nftasset.component';
+import { NftassetListComponent } from './nftasset/nftasset-list.component';
 
 
 const routes: Routes = [
@@ -206,7 +206,6 @@ const routes: Routes = [
     path: 'timetable/:id',
     component: TimetableComponent
   },
-
   {
     path: 'changepassword',
     component: ChangePasswordComponent
@@ -220,7 +219,6 @@ const routes: Routes = [
     path: 'myprofile/:id',
     component: MyprofileComponent
   },
-
   {
     path: 'forgetPassword',
     component: ForgetPasswordComponent
@@ -256,7 +254,6 @@ const routes: Routes = [
     path: 'geoFence/:id',
     component: GeofenceComponent
   },
-
 
   {
     path: 'employee',
@@ -334,6 +331,19 @@ const routes: Routes = [
   {
     path: 'account/:id',
     component: AccountComponent
+  },
+
+   {
+    path: 'nft',
+    component: NftassetComponent
+  },
+  {
+    path: 'nftList',
+    component: NftassetListComponent
+  },
+  {
+    path: 'nft/:id',
+    component: NftassetComponent
   },
 
 ];
