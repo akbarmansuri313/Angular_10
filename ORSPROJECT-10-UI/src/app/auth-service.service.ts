@@ -28,7 +28,7 @@ export class AuthServiceService implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         if (error.status === 0) {
           this.router.navigate([this.router.url], {
-            queryParams: { errorMessage: ".Server not reachable. Please start backend" }
+            queryParams: { errorMessage: "Server not reachable. Please start backend" }
           });
 
         }
