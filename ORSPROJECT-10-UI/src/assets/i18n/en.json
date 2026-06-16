@@ -55,7 +55,8 @@
         "FacultyList": "Faculty List",
         "Logout": "Logout",
         "Dashboard": "Dashboard",
-        "Login": "Login"
+        "Login": "Login",
+        "Java Doc" : "Java Doc"
     },
     "LocaleSelect": {
         "Select": "-------Select-------",

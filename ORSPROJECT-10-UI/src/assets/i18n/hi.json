@@ -55,7 +55,8 @@
         "FacultyList": "फैकल्टी सूची",
         "Logout": "लॉगआउट",
         "Dashboard": "डैशबोर्ड",
-        "Login": "लॉगिन"
+        "Login": "लॉगिन",
+        "Java Doc" : "प्रलेखन"
     },
     "LocaleSelect": {
         "Select": "-------चुनें-------",

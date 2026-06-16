@@ -1,0 +1,145 @@
+<div class="row" style="padding-top:8%; padding-bottom:5%;
+background:url(assets/files/wall.jpg) no-repeat center center;
+background-size: cover; width:100%; min-height:100vh;">
+
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-4">
+        <div class="card shadow">
+            <div class="card-body input-group-addon grad">
+
+                <form name="vehicleForm">
+
+                    <!-- Heading -->
+                    <h2 *ngIf="!form.data.id" class="text-primary font-weight-bold text-center">
+                        Add Vehicle
+                    </h2>
+
+                    <h2 *ngIf="form.data.id > 0" class="text-primary font-weight-bold text-center">
+                        Update Vehicle
+                    </h2>
+
+                    <!-- Success Message -->
+                    <div *ngIf="!form.error && form.message" class="alert alert-success">
+                        {{form.message}}
+                    </div>
+
+                    <!-- Error Message -->
+                    <div *ngIf="form.error && form.message" class="alert alert-danger">
+                        {{form.message}}
+                    </div>
+
+                    <!-- Vehicle Name -->
+                    <div class="form-group">
+                        <span><b>Vehicle Name</b></span>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-car"></i>
+                                </div>
+                            </div>
+
+                            <input type="text" name="vechicleName" [(ngModel)]="form.data.vechicleName"
+                                class="form-control" placeholder="Enter Vehicle Name">
+                        </div>
+
+                        <span style="color:red">
+                            {{form.inputerror.vechicleName}}
+                        </span>
+                    </div>
+
+                    <!-- Company -->
+                    <div class="form-group">
+                        <span><b>Company</b></span>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-building"></i>
+                                </div>
+                            </div>
+
+                            <input type="text" name="company" [(ngModel)]="form.data.company" class="form-control"
+                                placeholder="Enter Company Name">
+                        </div>
+
+                        <span style="color:red">
+                            {{form.inputerror.company}}
+                        </span>
+                    </div>
+
+                    <!-- Model -->
+                    <div class="form-group">
+                        <span><b>Model</b></span>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-cogs"></i>
+                                </div>
+                            </div>
+
+                            <input type="text" name="model" [(ngModel)]="form.data.model" class="form-control"
+                                placeholder="Enter Model">
+                        </div>
+
+                        <span style="color:red">
+                            {{form.inputerror.model}}
+                        </span>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="form-group">
+                        <span><b>Price</b></span>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-rupee-sign"></i>
+                                </div>
+                            </div>
+
+                            <input type="text" name="price" [(ngModel)]="form.data.price" class="form-control"
+                                placeholder="Enter Price">
+                        </div>
+
+                        <span style="color:red">
+                            {{form.inputerror.price}}
+                        </span>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="row pt-2 pl-2 pb-3">
+
+                        <div class="col-md-2"></div>
+
+                        <!-- Save -->
+                        <button *ngIf="!form.data.id" (click)="submit()" class="btn btn-success mr-2">
+                            Save
+                        </button>
+
+                        <!-- Reset -->
+                        <button *ngIf="!form.data.id" type="button" (click)="reset()" class="btn btn-dark mr-2">
+                            Reset
+                        </button>
+
+                        <!-- Update -->
+                        <button *ngIf="form.data.id > 0" (click)="submit()" class="btn btn-success mr-2">
+                            Update
+                        </button>
+
+                        <!-- List -->
+                        <a class="btn btn-warning" [routerLink]="['/vehicleeList']">
+                            List
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>

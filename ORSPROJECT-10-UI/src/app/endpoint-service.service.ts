@@ -32,5 +32,9 @@ export class EndpointServiceService {
   public PROFILE = this.SERVER_URL + "/Profile";
   public ACCOUNT = this.SERVER_URL + "/Account";
   public NFTASSET = this.SERVER_URL + "/Nft";
+  public CLOUD = this.SERVER_URL + "/Cloud";
+  public SERVER = this.SERVER_URL + "/Server";
+  public VEHICLE = this.SERVER_URL + "/Vehicle";
+  public VEHICLEE = this.SERVER_URL + "/Vechiclee";
 
 }

@@ -1,0 +1,170 @@
+<div class="content-wrapper" style="padding-top: 7%;
+    background: url(assets/files/wall.jpg) no-repeat center center;
+    background-size: cover;
+    width:auto;
+    min-height:100vh;">
+
+    ```
+    <div class="container-fluid">
+
+        <!-- Error Message -->
+        <div *ngIf="form.message && form.error === true"
+            class="alert alert-danger alert-dismissible text-center mx-auto"
+            style="max-width:600px; width:80%; margin-bottom:15px;">
+
+            <button type="button" class="close" data-dismiss="alert">
+                &times;
+            </button>
+
+            {{form.message}}
+
+        </div>
+
+        <!-- Success Message -->
+        <div *ngIf="form.message && form.error === false"
+            class="alert alert-success alert-dismissible text-center mx-auto"
+            style="max-width:600px; width:80%; margin-bottom:15px;">
+
+            <button type="button" class="close" data-dismiss="alert">
+                &times;
+            </button>
+
+            {{form.message}}
+
+        </div>
+
+        <!-- Main Panel -->
+        <div class="panel panel-primary" *ngIf="form.list.length > 0">
+
+            <!-- Heading -->
+            <div class="panel-heading text-center" style="height:50px;">
+                <h2 class="text-primary font-weight-bold">
+                    Vehicle List
+                </h2>
+            </div>
+
+            <!-- Search Section -->
+            <div class="row align-items-center mb-2">
+
+                <!-- Vehicle Name Search -->
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" [(ngModel)]="form.searchParams.vechicleName"
+                        placeholder="Search Vehicle Name">
+                </div>
+
+                <!-- Buttons -->
+                <div class="col-sm-3 d-flex justify-content-end flex-wrap">
+
+                    <button (click)="search()" class="btn btn-primary">
+                        Search
+                    </button>
+
+                    &nbsp;&nbsp;
+
+                    <button (click)="reset()" class="btn btn-secondary">
+                        Reset
+                    </button>
+
+                    &nbsp;&nbsp;
+
+                    <button (click)="forward('/vehiclee')" class="btn btn-success">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-dark table-hover font-weight-bold">
+
+                    <thead class="thead-dark text-center">
+
+                        <tr>
+
+                            <th>
+                                <input type="checkbox" [(ngModel)]="isMasterSel" (change)="checkUncheckAll($event)">
+                            </th>
+
+                            <th>S.No</th>
+                            <th>Vehicle Name</th>
+                            <th>Company</th>
+                            <th>Model</th>
+                            <th>Price</th>
+                            <th>Edit</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody class="text-center">
+
+                        <tr *ngFor="let m of form.list; let i = index">
+
+                            <td>
+                                <input type="checkbox" #checkboxes (change)="checklistUpdate()" [id]="m.id"
+                                    [value]="isMasterSel">
+                            </td>
+
+                            <td>{{(form.pageNo*5)+i+1}}</td>
+
+                            <td>{{m.vechicleName}}</td>
+                            <td>{{m.company}}</td>
+                            <td>{{m.model}}</td>
+                            <td>₹ {{m.price}}</td>
+
+                            <td>
+                                <button class="fa fa-edit text-primary" (click)="forward('/vehiclee/' + m.id)" style="cursor:pointer;
+                                border:none;
+                                background:none;">
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="row mt-2 align-items-center">
+
+                <div class="col text-left">
+                    <button (click)="previous()" [disabled]="form.pageNo == 0" class="btn btn-warning">
+                        Previous
+                    </button>
+                </div>
+
+                <div class="col-10 text-center">
+                    <button (click)="deleteMany()" class="btn btn-danger">
+                        Delete
+                    </button>
+                </div>
+
+                <div class="col text-right">
+                    <button (click)="next()" [disabled]="form.nextListSize == 0" class="btn btn-info">
+                        Next
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- No Record Found -->
+        <div class="text-center">
+
+            <button *ngIf="form.list.length == 0" (click)="reset()" class="btn btn-warning">
+                Back
+            </button>
+
+        </div>
+
+    </div>
+    ```
+
+</div>

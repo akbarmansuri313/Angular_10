@@ -59,6 +59,14 @@ import { AccountComponent } from './account/account.component';;
 import { AccontListComponent } from './account/accont-list.component';
 import { NftassetComponent } from './nftasset/nftasset.component';
 import { NftassetListComponent } from './nftasset/nftasset-list.component';
+import { CloudstorageComponent } from './cloudstorage/cloudstorage.component';
+import { CloudstorageListComponent } from './cloudstorage/cloudstorage-list.component';
+import { ServermonitorComponent } from './servermonitor/servermonitor.component';
+import { ServermonitorListComponent } from './servermonitor/servermonitor-list.component';
+import { VehiclerentalComponent } from './vehiclerental/vehiclerental.component';
+import { VehiclerentalListComponent } from './vehiclerental/vehiclerental-list.component';
+import { VechicleeComponent } from './vechiclee/vechiclee.component';
+import { VechicleeListComponent } from './vechiclee/vechiclee-list.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -116,6 +124,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     AccontListComponent,
     NftassetComponent,
     NftassetListComponent,
+    CloudstorageComponent,
+    CloudstorageListComponent,
+    ServermonitorComponent,
+    ServermonitorListComponent,
+    VehiclerentalComponent,
+    VehiclerentalListComponent,
+    VechicleeComponent,
+    VechicleeListComponent,
   ],
   imports: [
     BrowserModule,

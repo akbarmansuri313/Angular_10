@@ -47,6 +47,14 @@ import { AccountComponent } from './account/account.component';
 import { AccontListComponent } from './account/accont-list.component';
 import { NftassetComponent } from './nftasset/nftasset.component';
 import { NftassetListComponent } from './nftasset/nftasset-list.component';
+import { CloudstorageComponent } from './cloudstorage/cloudstorage.component';
+import { CloudstorageListComponent } from './cloudstorage/cloudstorage-list.component';
+import { ServermonitorComponent } from './servermonitor/servermonitor.component';
+import { ServermonitorListComponent } from './servermonitor/servermonitor-list.component';
+import { VehiclerentalComponent } from './vehiclerental/vehiclerental.component';
+import { VehiclerentalListComponent } from './vehiclerental/vehiclerental-list.component';
+import { VechicleeComponent } from './vechiclee/vechiclee.component';
+import { VechicleeListComponent } from './vechiclee/vechiclee-list.component';
 
 
 const routes: Routes = [
@@ -344,6 +352,58 @@ const routes: Routes = [
   {
     path: 'nft/:id',
     component: NftassetComponent
+  },
+
+   {
+    path: 'cloud',
+    component: CloudstorageComponent
+  },
+  {
+    path: 'cloudList',
+    component: CloudstorageListComponent
+  },
+  {
+    path: 'cloud/:id',
+    component: CloudstorageComponent
+  },
+
+   {
+    path: 'servermonitor',
+    component: ServermonitorComponent
+  },
+  {
+    path: 'servermonitorList',
+    component: ServermonitorListComponent
+  },
+  {
+    path: 'servermonitor/:id',
+    component: ServermonitorComponent
+  },
+
+    {
+    path: 'vehicle',
+    component: VehiclerentalComponent
+  },
+  {
+    path: 'vehicleList',
+    component: VehiclerentalListComponent
+  },
+  {
+    path: 'vehicle/:id',
+    component: VehiclerentalComponent
+  },
+
+   {
+    path: 'vehiclee',
+    component: VechicleeComponent
+  },
+  {
+    path: 'vehicleeList',
+    component: VechicleeListComponent
+  },
+  {
+    path: 'vehiclee/:id',
+    component: VechicleeComponent
   },
 
 ];

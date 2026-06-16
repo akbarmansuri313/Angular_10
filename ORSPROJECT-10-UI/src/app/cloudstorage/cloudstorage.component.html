@@ -1,0 +1,158 @@
+<div class="row" style="padding-top:8%; padding-bottom:5%;
+background:url(assets/files/wall.jpg) no-repeat center center;
+background-size: cover; width:100%; min-height:100vh;">
+
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body input-group-addon grad">
+
+                <form name="testForm">
+
+                    <!-- Heading -->
+                    <h2 *ngIf="!form.data.id" class="text-primary font-weight-bold text-center">
+                        Add Cloud File
+                    </h2>
+
+                    <h2 *ngIf="form.data.id > 0" class="text-primary font-weight-bold text-center">
+                        Cloud Update File
+                    </h2>
+
+                    <!-- Success Message -->
+                    <div *ngIf="!form.error && form.message" class="alert alert-success">
+                        {{form.message}}
+                    </div>
+
+                    <!-- Error Message -->
+                    <div *ngIf="form.error && form.message" class="alert alert-danger">
+                        {{form.message}}
+                    </div>
+
+
+                    <!-- User Name -->
+                    <div class="form-group">
+                        <span><b>User Name</b></span>
+
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </div>
+
+                                <input type="text" name="userName" [(ngModel)]="form.data.userName" class="form-control"
+                                    placeholder="Enter User Name">
+                            </div>
+                        </div>
+
+                        <span style="color:red;">
+                            {{form.inputerror.userName}}
+                        </span>
+                    </div>
+
+                    <!-- File Name -->
+                    <div class="form-group">
+                        <span><b>File Name</b></span>
+
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-file"></i>
+                                    </div>
+                                </div>
+
+                                <input type="text" name="fileName" [(ngModel)]="form.data.fileName" class="form-control"
+                                    placeholder="Enter File Name">
+                            </div>
+                        </div>
+
+                        <span style="color:red;">
+                            {{form.inputerror.fileName}}
+                        </span>
+                    </div>
+
+                    <!-- File Size -->
+                    <div class="form-group">
+                        <span><b>File Size</b></span>
+
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-database"></i>
+                                    </div>
+                                </div>
+
+                                <input type="number" name="fileSize" [(ngModel)]="form.data.fileSize"
+                                    class="form-control" placeholder="Enter File Size">
+                            </div>
+                        </div>
+
+                        <span style="color:red;">
+                            {{form.inputerror.fileSize}}
+                        </span>
+                    </div>
+
+                    <!-- Upload Date -->
+                    <div class="form-group">
+                        <span><b>Upload Date</b></span>
+
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                </div>
+
+                                <input type="date" name="uploadDate" [(ngModel)]="form.data.uploadDate"
+                                    class="form-control">
+                            </div>
+                        </div>
+
+                        <span style="color:red;">
+                            {{form.inputerror.uploadDate}}
+                        </span>
+                    </div>
+
+
+
+                    <!-- Buttons -->
+                    <div class="row pt-2 pl-2 pb-3">
+
+                        <div class="col-md-3"></div>
+
+                        <button *ngIf="!form.data.id" (click)="submit()" class="btn btn-success mr-2">
+                            Save
+                        </button>
+
+                         <!-- Reset -->
+                        <button *ngIf="!form.data.id" type="button" (click)="reset()" class="btn btn-dark mr-2">
+
+                            Reset
+                        </button>
+
+                        <button *ngIf="form.data.id > 0" (click)="submit()" class="btn btn-success mr-2">
+                            Update
+                        </button>
+
+                        <a class="btn btn-warning" [routerLink]="['/cloudList']">
+                            List
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>

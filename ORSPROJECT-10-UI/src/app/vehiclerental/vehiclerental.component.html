@@ -1,0 +1,166 @@
+<div class="row" style="padding-top:8%; padding-bottom:5%;
+background:url(assets/files/wall.jpg) no-repeat center center;
+background-size: cover; width:100%; min-height:100vh;">
+
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-4">
+        <div class="card shadow">
+            <div class="card-body input-group-addon grad">
+
+                <form name="vehicleRentForm">
+
+                    <!-- Heading -->
+                    <h2 *ngIf="!form.data.id" class="text-primary font-weight-bold text-center">
+                        Add Vehicle Rent
+                    </h2>
+
+                    <h2 *ngIf="form.data.id > 0" class="text-primary font-weight-bold text-center">
+                        Update Vehicle Rent
+                    </h2>
+
+                    <!-- Success Message -->
+                    <div *ngIf="!form.error && form.message" class="alert alert-success">
+                        {{form.message}}
+                    </div>
+
+                    <!-- Error Message -->
+                    <div *ngIf="form.error && form.message" class="alert alert-danger">
+                        {{form.message}}
+                    </div>
+
+                    <!-- Customer Name -->
+                    <div class="form-group">
+                        <span><b>Customer Name</b></span>
+
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </div>
+
+                                <input type="text" name="customerName" [(ngModel)]="form.data.customerName"
+                                    class="form-control" placeholder="Enter Customer Name">
+                            </div>
+                        </div>
+
+                        <span style="color:red;">
+                            {{form.inputerror.customerName}}
+                        </span>
+                    </div>
+
+                    <!-- Vehicle Type -->
+                    <div class="form-group">
+                        <span><b>Vehicle Type</b></span>
+
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-car"></i>
+                                    </div>
+                                </div>
+
+                                <select name="vehicleType" [(ngModel)]="form.data.vehicleType" class="form-control">
+
+                                    <option value="undefined">-- Select Vehicle Type --</option>
+                                    <option value="2 Wheeler">2 Wheeler</option>
+                                    <option value="4 Wheeler">4 Wheeler</option>
+                                    <option value="3 Wheeler">3 Wheeler</option>
+                                    <option value="Truck">Truck</option>
+                                    <option value="Dumfer">Dumfer</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <span style="color:red;">
+                            {{form.inputerror.vehicleType}}
+                        </span>
+                    </div>
+
+                    <!-- Rent Per Day -->
+                    <div class="form-group">
+                        <span><b>Rent Per Day</b></span>
+
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-money-bill"></i>
+                                    </div>
+                                </div>
+
+                                <input type="text" name="rentPerDay" [(ngModel)]="form.data.rentPerDay"
+                                    class="form-control" placeholder="Enter Rent Per Day">
+                            </div>
+                        </div>
+
+                        <span style="color:red;">
+                            {{form.inputerror.rentPerDay}}
+                        </span>
+                    </div>
+
+                    <!-- Total Days -->
+                    <div class="form-group">
+                        <span><b>Total Days</b></span>
+
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                </div>
+
+                                <input type="text" name="totalDays" [(ngModel)]="form.data.totalDays"
+                                    class="form-control" placeholder="Enter Total Days">
+                            </div>
+                        </div>
+
+                        <span style="color:red;">
+                            {{form.inputerror.totalDays}}
+                        </span>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="row pt-2 pl-2 pb-3">
+
+                        <div class="col-md-2"></div>
+
+                        <!-- Save -->
+                        <button *ngIf="!form.data.id" (click)="submit()" class="btn btn-success mr-2">
+                            Save
+                        </button>
+
+                        <!-- Reset -->
+                        <button *ngIf="!form.data.id" type="button" (click)="reset()" class="btn btn-dark mr-2">
+                            Reset
+                        </button>
+
+                        <!-- Update -->
+                        <button *ngIf="form.data.id > 0" (click)="submit()" class="btn btn-success mr-2">
+                            Update
+                        </button>
+
+                        <!-- List -->
+                        <a class="btn btn-warning" [routerLink]="['/vehicleList']">
+                            List
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
