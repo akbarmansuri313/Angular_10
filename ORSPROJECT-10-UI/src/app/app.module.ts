@@ -67,6 +67,8 @@ import { VehiclerentalComponent } from './vehiclerental/vehiclerental.component'
 import { VehiclerentalListComponent } from './vehiclerental/vehiclerental-list.component';
 import { VechicleeComponent } from './vechiclee/vechiclee.component';
 import { VechicleeListComponent } from './vechiclee/vechiclee-list.component';
+import { FoodorderComponent } from './foodorder/foodorder.component';
+import { FoodorderListComponent } from './foodorder/foodorder-list.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -132,6 +134,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     VehiclerentalListComponent,
     VechicleeComponent,
     VechicleeListComponent,
+    FoodorderComponent,
+    FoodorderListComponent,
   ],
   imports: [
     BrowserModule,

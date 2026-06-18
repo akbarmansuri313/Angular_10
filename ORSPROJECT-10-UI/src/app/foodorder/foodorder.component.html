@@ -1,0 +1,130 @@
+<div class="row" style="padding-top:8%; padding-bottom:5%;
+  background:url(assets/files/wall.jpg) no-repeat center center;
+  background-size: cover; width:100%; min-height:100vh;">
+
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body input-group-addon grad">
+
+                <form name="orderForm">
+
+                    <h2 *ngIf="!form.data.id" class="text-primary font-weight-bold text-center">
+                        Add Order
+                    </h2>
+
+                    <h2 *ngIf="form.data.id > 0" class="text-primary font-weight-bold text-center">
+                        Update Order
+                    </h2>
+
+                    <!-- Success Message -->
+                    <div *ngIf="!form.error && form.message" class="alert alert-success">
+                        {{form.message}}
+                    </div>
+
+                    <!-- Error Message -->
+                    <div *ngIf="form.error && form.message" class="alert alert-danger">
+                        {{form.message}}
+                    </div>
+
+                    <!-- Customer Name -->
+                    <div class="form-group">
+                        <span><b>Customer Name</b></span>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="customerName" [(ngModel)]="form.data.customerName"
+                                    class="form-control" placeholder="Enter Customer Name">
+                            </div>
+                        </div>
+                        <span style="color:red;">
+                            {{form.inputerror.customerName}}
+                        </span>
+                    </div>
+
+                    <!-- Food Item -->
+                    <div class="form-group">
+                        <span><b>Food Item</b></span>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-cutlery"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="foodItem" [(ngModel)]="form.data.foodItem" class="form-control"
+                                    placeholder="Enter Food Item">
+                            </div>
+                        </div>
+                        <span style="color:red;">
+                            {{form.inputerror.foodItem}}
+                        </span>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="form-group">
+                        <span><b>Quantity</b></span>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-sort-numeric-asc"></i>
+                                    </div>
+                                </div>
+                                <input type="number" name="quantity" [(ngModel)]="form.data.quantity"
+                                    class="form-control" placeholder="Enter Quantity">
+                            </div>
+                        </div>
+                        <span style="color:red;">
+                            {{form.inputerror.quantity}}
+                        </span>
+                    </div>
+
+                    <!-- Total Amount -->
+                    <div class="form-group">
+                        <span><b>Total Amount</b></span>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-inr"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="totalAmount" [(ngModel)]="form.data.totalAmount"
+                                    class="form-control" placeholder="Enter Total Amount">
+                            </div>
+                        </div>
+                        <span style="color:red;">
+                            {{form.inputerror.totalAmount}}
+                        </span>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="row pt-2 pl-2 pb-3">
+                        <div class="col-md-3"></div>
+
+                        <button *ngIf="!form.data.id" (click)="submit()" class="btn btn-success mr-2">
+                            Save
+                        </button>
+
+                        <button *ngIf="form.data.id > 0" (click)="submit()" class="btn btn-success mr-2">
+                            Update
+                        </button>
+
+                        <a class="btn btn-warning" [routerLink]="['/foodorderList']">
+                            List
+                        </a>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -55,6 +55,8 @@ import { VehiclerentalComponent } from './vehiclerental/vehiclerental.component'
 import { VehiclerentalListComponent } from './vehiclerental/vehiclerental-list.component';
 import { VechicleeComponent } from './vechiclee/vechiclee.component';
 import { VechicleeListComponent } from './vechiclee/vechiclee-list.component';
+import { FoodorderComponent } from './foodorder/foodorder.component';
+import { FoodorderListComponent } from './foodorder/foodorder-list.component';
 
 
 const routes: Routes = [
@@ -404,6 +406,19 @@ const routes: Routes = [
   {
     path: 'vehiclee/:id',
     component: VechicleeComponent
+  },
+
+    {
+    path: 'foodorder',
+    component: FoodorderComponent
+  },
+  {
+    path: 'foodorderList',
+    component: FoodorderListComponent
+  },
+  {
+    path: 'foodorder/:id',
+    component: FoodorderComponent
   },
 
 ];
