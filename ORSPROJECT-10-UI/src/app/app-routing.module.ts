@@ -57,6 +57,10 @@ import { VechicleeComponent } from './vechiclee/vechiclee.component';
 import { VechicleeListComponent } from './vechiclee/vechiclee-list.component';
 import { FoodorderComponent } from './foodorder/foodorder.component';
 import { FoodorderListComponent } from './foodorder/foodorder-list.component';
+import { CoworkingComponent } from './coworking/coworking.component';
+import { CoworkingListComponent } from './coworking/coworking-list.component';
+import { PetComponent } from './pet/pet.component';
+import { PetListComponent } from './pet/pet-list.component';
 
 
 const routes: Routes = [
@@ -419,6 +423,32 @@ const routes: Routes = [
   {
     path: 'foodorder/:id',
     component: FoodorderComponent
+  },
+
+    {
+    path: 'coworking',
+    component: CoworkingComponent
+  },
+  {
+    path: 'coworkingList',
+    component: CoworkingListComponent
+  },
+  {
+    path: 'coworking/:id',
+    component: CoworkingComponent
+  },
+
+    {
+    path: 'pet',
+    component: PetComponent
+  },
+  {
+    path: 'petList',
+    component: PetListComponent
+  },
+  {
+    path: 'pet/:id',
+    component: PetComponent
   },
 
 ];

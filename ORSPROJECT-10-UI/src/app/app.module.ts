@@ -69,6 +69,10 @@ import { VechicleeComponent } from './vechiclee/vechiclee.component';
 import { VechicleeListComponent } from './vechiclee/vechiclee-list.component';
 import { FoodorderComponent } from './foodorder/foodorder.component';
 import { FoodorderListComponent } from './foodorder/foodorder-list.component';
+import { CoworkingComponent } from './coworking/coworking.component';
+import { CoworkingListComponent } from './coworking/coworking-list.component';
+import { PetComponent } from './pet/pet.component';
+import { PetListComponent } from './pet/pet-list.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -136,6 +140,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     VechicleeListComponent,
     FoodorderComponent,
     FoodorderListComponent,
+    CoworkingComponent,
+    CoworkingListComponent,
+    PetComponent,
+    PetListComponent,
   ],
   imports: [
     BrowserModule,

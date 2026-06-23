@@ -11,6 +11,10 @@
     "LoginId": "Login Id",
     "Password": "Password",
     "DateOfBirth": "Date of Birth",
+    "Age": "Age",
+    "Pet Name": "Pet Name",
+    "Breed": "Breed",
+    "Status": "Status",
     "Gender": "Gender",
     "Mobile": "Mobile",
     "Buttons": {
@@ -56,7 +60,10 @@
         "Logout": "Logout",
         "Dashboard": "Dashboard",
         "Login": "Login",
-        "Java Doc" : "Java Doc"
+        "Java Doc": "Java Doc",
+        "AddPetAdoption": "Add Pet Adoption",
+        "UpdatePetAdoption": "Update Pet Adoption",
+        "PetList": "Pet List"
     },
     "LocaleSelect": {
         "Select": "-------Select-------",
@@ -75,7 +82,12 @@
         "Role": "Role",
         "Mobile": "Mobile",
         "AlternateMobile": "Alternate Mobile",
+        "Age": "Age",
+        "Pet Name": "Pet Name",
+        "Breed": "Breed",
         "Status": "Status",
+        "SearchPetName": "Search Pet Name",
+        "SearchBreed": "Search Breed",
         "Placeholders": {
             "FirstName": "Enter First Name",
             "LastName": "Enter Last Name",
@@ -95,7 +107,8 @@
         "Buttons": {
             "Save": "Save",
             "List": "List",
-            "Update": "Update"
+            "Update": "Update",
+            "Reset": "Reset"
         }
     },
     "UserList": {
@@ -109,7 +122,11 @@
         "Phone": "Phone",
         "Gender": "Gender",
         "DOB": "Date of Birth",
-        "Edit": "Edit"
+        "Edit": "Edit",
+        "PetName": "Pet Name",
+        "Breed": "Breed",
+        "Age": "Age"
+       
     },
     "Menu": {
         "User": "User",
@@ -122,6 +139,8 @@
         "TimeTable": "Time Table",
         "GetMarksheet": "Get Marksheet",
         "MarksheetMeritList": "Merit Marksheet",
-        "College": "College"
+        "College": "College",
+        "PetAdoption": "Pet Adoption"
+
     }
 }

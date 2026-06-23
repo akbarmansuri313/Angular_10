@@ -11,6 +11,10 @@
     "LoginId": "लॉगिन आईडी",
     "Password": "पासवर्ड",
     "DateOfBirth": "जन्म तिथि",
+    "Age": "आयु",
+    "Pet Name": "पेट का नाम",
+    "Breed": "नस्ल",
+    "Status": "स्थिति",
     "Gender": "लिंग",
     "Mobile": "मोबाइल",
     "Buttons": {
@@ -56,7 +60,10 @@
         "Logout": "लॉगआउट",
         "Dashboard": "डैशबोर्ड",
         "Login": "लॉगिन",
-        "Java Doc" : "प्रलेखन"
+        "Java Doc": "प्रलेखन",
+        "AddPetAdoption": "पेट एडॉप्शन जोड़ें",
+        "UpdatePetAdoption": "पेट एडॉप्शन अपडेट करें",
+        "PetList": "पेट सूची"
     },
     "LocaleSelect": {
         "Select": "-------चुनें-------",
@@ -76,6 +83,11 @@
         "Mobile": "मोबाइल",
         "AlternateMobile": "वैकल्पिक मोबाइल",
         "Status": "स्थिति",
+        "Age": "आयु",
+        "Pet Name": "पेट का नाम",
+        "Breed": "नस्ल",
+        "SearchPetName": "पेट का नाम खोजें",
+        "SearchBreed": "नस्ल खोजें",
         "Placeholders": {
             "FirstName": "पहला नाम दर्ज करें",
             "LastName": "अंतिम नाम दर्ज करें",
@@ -110,7 +122,12 @@
         "Phone": "फ़ोन",
         "Gender": "लिंग",
         "DOB": "जन्म तिथि",
-        "Edit": "संपादित करें"
+        "Edit": "संपादित करें",
+        "PetName": "पेट का नाम",
+        "Breed": "नस्ल",
+        "Age": "आयु"
+        
+        
     },
     "Menu": {
         "User": "उपयोगकर्ता",
@@ -123,7 +140,8 @@
         "TimeTable": "समय सारणी",
         "GetMarksheet": "अंकसूची प्राप्त करें",
         "MarksheetMeritList": "मेधावी अंकसूची",
-        "College": "महाविद्यालय"
-        
+        "College": "महाविद्यालय",
+        "PetAdoption": "पेट गोद लेना"
+
     }
 }

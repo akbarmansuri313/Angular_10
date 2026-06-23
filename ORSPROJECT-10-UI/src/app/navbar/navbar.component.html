@@ -154,7 +154,7 @@
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
             <i class="fa fa-calendar"></i> Allow
           </a>
@@ -236,7 +236,7 @@
             <li><a class="dropdown-item" [routerLink]="['/accountList']">
                 <i class="fa fa-list"></i> Account Status List</a></li>
           </ul>
-        </li>
+        </li> -->
 
          <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
@@ -299,7 +299,7 @@
           </ul>
         </li> -->
 
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
             <i class="fa fa-calendar"></i> Vehicle
           </a>
@@ -320,6 +320,30 @@
                 <i class="fa fa-plus"></i> Add Food Order</a></li>
             <li><a class="dropdown-item" [routerLink]="['/foodorderList']">
                 <i class="fa fa-list"></i> Food Order List</a></li>
+          </ul>
+        </li>
+
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+            <i class="fa fa-calendar"></i> CoWorking
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['/coworking']">
+                <i class="fa fa-plus"></i> Add CoWorking</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/coworkingList']">
+                <i class="fa fa-list"></i> CoWorking List</a></li>
+          </ul>
+        </li> -->
+
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+            <i class="fa fa-calendar"></i> {{'Menu.PetAdoption'|translate}}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['/pet']">
+                <i class="fa fa-plus"></i> {{'Links.AddPetAdoption'|translate}}</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/petList']">
+                <i class="fa fa-list"></i>{{'Links.PetList'|translate}}</a></li>
           </ul>
         </li>
 
