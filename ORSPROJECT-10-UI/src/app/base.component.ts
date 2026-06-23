@@ -53,6 +53,8 @@ export class BaseCtl implements OnInit {
             this.form.message = params['errorMessage'];
             this.form.error = true;
         })
+
+        
         serviceLocator.getPathVariable(route, function (params: any) {
             _self.form.data.id = params["id"];
         })
