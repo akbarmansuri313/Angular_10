@@ -14,7 +14,7 @@ export class AuthServiceService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    if (localStorage.getItem('fname') && localStorage.getItem('token')) {
+    if (localStorage.getItem('token')) {
       this.token = localStorage.getItem('token')
       req = req.clone({
         setHeaders: {
@@ -22,7 +22,7 @@ export class AuthServiceService implements HttpInterceptor {
           "name": "Akbar",
           Authorization: this.token
         }
-      })
+      });
     }
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {

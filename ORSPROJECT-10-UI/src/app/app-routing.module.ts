@@ -61,6 +61,8 @@ import { CoworkingComponent } from './coworking/coworking.component';
 import { CoworkingListComponent } from './coworking/coworking-list.component';
 import { PetComponent } from './pet/pet.component';
 import { PetListComponent } from './pet/pet-list.component';
+import { DroneComponent } from './drone/drone.component';
+import { DroneListComponent } from './drone/drone-list.component';
 
 
 const routes: Routes = [
@@ -449,6 +451,19 @@ const routes: Routes = [
   {
     path: 'pet/:id',
     component: PetComponent
+  },
+
+   {
+    path: 'drone',
+    component: DroneComponent
+  },
+  {
+    path: 'droneList',
+    component: DroneListComponent
+  },
+  {
+    path: 'drone/:id',
+    component: DroneComponent
   },
 
 ];

@@ -73,6 +73,8 @@ import { CoworkingComponent } from './coworking/coworking.component';
 import { CoworkingListComponent } from './coworking/coworking-list.component';
 import { PetComponent } from './pet/pet.component';
 import { PetListComponent } from './pet/pet-list.component';
+import { DroneComponent } from './drone/drone.component';
+import { DroneListComponent } from './drone/drone-list.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -144,6 +146,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CoworkingListComponent,
     PetComponent,
     PetListComponent,
+    DroneComponent,
+    DroneListComponent,
   ],
   imports: [
     BrowserModule,
@@ -164,7 +168,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpServiceService,
     AuthServiceService,
     EndpointServiceService,
-
     {
       provide: HTTP_INTERCEPTORS, useClass: AuthServiceService, multi: true
     },

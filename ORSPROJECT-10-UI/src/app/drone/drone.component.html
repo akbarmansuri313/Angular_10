@@ -12,11 +12,11 @@ background-size: cover; width:100%; min-height:100vh;">
 
                     <!-- Heading -->
                     <h2 *ngIf="!form.data.id" class="text-primary font-weight-bold text-center">
-                         {{ 'Links.AddPetAdoption' | translate }}
+                        Add Drone Delivery
                     </h2>
 
                     <h2 *ngIf="form.data.id > 0" class="text-primary font-weight-bold text-center">
-                         {{ 'Links.UpdatePetAdoption' | translate }}
+                        Update Drone Delivery
                     </h2>
 
                     <!-- Success Message -->
@@ -29,91 +29,106 @@ background-size: cover; width:100%; min-height:100vh;">
                         {{form.message}}
                     </div>
 
-                    <!-- Pet Name -->
+                    <!-- Drone Code -->
                     <div class="form-group">
-                        <span><b>{{ 'Pet Name' | translate }}</b></span>
+                        <span><b>Drone Code</b></span>
 
                         <div class="col-sm-12">
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
-                                        <i class="fa fa-paw"></i>
+                                        <i class="fa fa-helicopter"></i>
                                     </div>
                                 </div>
 
-                                <input type="text" name="petName" [(ngModel)]="form.data.petName" class="form-control"
-                                    placeholder="{{ 'UserForm.Pet Name' | translate }}">
+                                <input type="text" name="droneCode" [(ngModel)]="form.data.droneCode"
+                                    class="form-control" placeholder="Enter Drone Code">
                             </div>
                         </div>
 
                         <span style="color:red;">
-                            {{form.inputerror.petName}}
+                            {{form.inputerror.droneCode}}
                         </span>
                     </div>
 
-                    <!-- Breed -->
+                    <!-- Operator Name -->
                     <div class="form-group">
-                        <span><b>{{ 'Breed' | translate }}</b></span>
+                        <span><b>Operator Name</b></span>
 
                         <div class="col-sm-12">
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
-                                        <i class="fa fa-tag"></i>
+                                        <i class="fa fa-user"></i>
                                     </div>
                                 </div>
 
-                                <input type="text" name="breed" [(ngModel)]="form.data.breed" class="form-control"
-                                    placeholder="{{ 'UserForm.Breed' | translate }}">
+                                <input type="text" name="operatorName" [(ngModel)]="form.data.operatorName"
+                                    class="form-control" placeholder="Enter Operator Name">
                             </div>
                         </div>
 
                         <span style="color:red;">
-                            {{form.inputerror.breed}}
+                            {{form.inputerror.operatorName}}
                         </span>
                     </div>
 
-                    <!-- Age -->
+                    <!-- Delivery Zone -->
                     <div class="form-group">
-                          <span><b>{{ 'Age' | translate }}</b></span>
+                        <span><b>Delivery Zone</b></span>
 
                         <div class="col-sm-12">
                             <div class="input-group">
+
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
-                                        <i class="fa fa-calendar"></i>
+                                        <i class="fa fa-map-marker"></i>
                                     </div>
                                 </div>
 
-                                <input type="date" name="age" [(ngModel)]="form.data.age"
-                                    [ngModel]="form.data.age | date:'yyyy-MM-dd'" class="form-control"
-                                    placeholder="{{ 'UserForm.Age' | translate }}">
+                                <select class="form-control" name="deliveryZone" [(ngModel)]="form.data.deliveryZone">
+                                    <option value="undefined">--Select City--</option>
+                                    <option value="Bhopal">Bhopal</option>
+                                    <option value="Indore">Indore</option>
+                                    <option value="Jabalpur">Jabalpur</option>
+                                    <option value="Gwalior">Gwalior</option>
+                                    <option value="Ujjain">Ujjain</option>
+                                    <option value="Sagar">Sagar</option>
+                                    <option value="Rewa">Rewa</option>
+
+                                </select>
+
                             </div>
                         </div>
 
                         <span style="color:red;">
-                            {{form.inputerror.age}}
+                            {{form.inputerror.deliveryZone}}
                         </span>
                     </div>
 
                     <!-- Status -->
                     <div class="form-group">
-                        <span><b>{{ 'Status' | translate }}</b></span>
+                        <span><b>Status</b></span>
 
                         <div class="col-sm-12">
                             <div class="input-group">
+
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
-                                        <i class="fa fa-info-circle"></i>
+                                        <i class="fa fa-check-circle"></i>
                                     </div>
                                 </div>
 
-                                <select name="status" [(ngModel)]="form.data.status" class="form-control">
-                                    <option value="undefined">"{{ 'UserForm.Status' | translate }}"</option>
+                                <select class="form-control" name="status" [(ngModel)]="form.data.status">
+
+                                    <option value="undefined">--Select Status--</option>
                                     <option value="Available">Available</option>
-                                    <option value="Adopted">Adopted</option>
-                                    <option value="Pending">Pending</option>
+                                    <option value="Busy">Busy</option>
+                                    <option value="Maintenance">Maintenance</option>
+                                    <option value="Inactive">Inactive</option>
+
                                 </select>
+
                             </div>
                         </div>
 
@@ -128,19 +143,19 @@ background-size: cover; width:100%; min-height:100vh;">
                         <div class="col-md-3"></div>
 
                         <button *ngIf="!form.data.id" (click)="submit()" class="btn btn-success mr-2">
-                             {{ 'UserForm.Buttons.Save' | translate }}
+                            Save
                         </button>
 
                         <button *ngIf="!form.data.id" type="button" (click)="reset()" class="btn btn-dark mr-2">
-                          {{ 'UserForm.Buttons.Reset' | translate }}
+                            Reset
                         </button>
 
                         <button *ngIf="form.data.id > 0" (click)="submit()" class="btn btn-success mr-2">
-                            {{ 'UserForm.Buttons.Update' | translate }}
+                            Update
                         </button>
 
-                        <a class="btn btn-warning" [routerLink]="['/petList']">
-                            {{ 'UserForm.Buttons.List' | translate }}
+                        <a class="btn btn-warning" [routerLink]="['/droneList']">
+                            List
                         </a>
 
                     </div>

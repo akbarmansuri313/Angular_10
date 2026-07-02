@@ -39,5 +39,6 @@ export class EndpointServiceService {
   public FOODORDER = this.SERVER_URL + "/Food";
   public COWORKING = this.SERVER_URL + "/Coworking";
   public PETADOPTION = this.SERVER_URL + "/Pet";
+  public DRONE = this.SERVER_URL + "/Drone";
 
 }
