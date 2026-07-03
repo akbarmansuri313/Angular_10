@@ -34,7 +34,7 @@ background-size: cover; width:100%; min-height:100vh;">
                     <!-- Recommendation Code -->
                     <div class="form-group">
 
-                        <span><b>{{'Recommendation Code' | translate}}</b></span>
+                        <span><b>{{'UserForm.RecommendationCode' | translate}}</b></span>
 
                         <div class="col-sm-12">
 
@@ -46,11 +46,8 @@ background-size: cover; width:100%; min-height:100vh;">
                                     </div>
                                 </div>
 
-                                <input type="text"
-                                    name="recommendationCode"
-                                    [(ngModel)]="form.data.recommendationCode"
-                                    class="form-control"
-                                    placeholder="{{'UserForm.RecommendationCode' | translate}}">
+                                <input type="text" name="recommendationCode" [(ngModel)]="form.data.recommendationCode"
+                                    class="form-control" placeholder="{{'UserForm.RecommendationCode' | translate}}">
 
                             </div>
 
@@ -65,7 +62,7 @@ background-size: cover; width:100%; min-height:100vh;">
                     <!-- User Name -->
                     <div class="form-group">
 
-                        <span><b>{{'User Name' | translate}}</b></span>
+                        <span><b>{{'UserForm.UserName' | translate}}</b></span>
 
                         <div class="col-sm-12">
 
@@ -77,10 +74,7 @@ background-size: cover; width:100%; min-height:100vh;">
                                     </div>
                                 </div>
 
-                                <input type="text"
-                                    name="userName"
-                                    [(ngModel)]="form.data.userName"
-                                    class="form-control"
+                                <input type="text" name="userName" [(ngModel)]="form.data.userName" class="form-control"
                                     placeholder="{{'UserForm.UserName' | translate}}">
 
                             </div>
@@ -96,7 +90,7 @@ background-size: cover; width:100%; min-height:100vh;">
                     <!-- Recommendation Type -->
                     <div class="form-group">
 
-                        <span><b>{{'Recommendation Type' | translate}}</b></span>
+                        <span><b>{{'UserForm.RecommendationType' | translate}}</b></span>
 
                         <div class="col-sm-12">
 
@@ -108,11 +102,8 @@ background-size: cover; width:100%; min-height:100vh;">
                                     </div>
                                 </div>
 
-                                <input type="text"
-                                    name="recommendationType"
-                                    [(ngModel)]="form.data.recommendationType"
-                                    class="form-control"
-                                    placeholder="{{'UserForm.RecommendationType' | translate}}">
+                                <input type="text" name="recommendationType" [(ngModel)]="form.data.recommendationType"
+                                    class="form-control" placeholder="{{'UserForm.RecommendationType' | translate}}">
 
                             </div>
 
@@ -127,7 +118,7 @@ background-size: cover; width:100%; min-height:100vh;">
                     <!-- Status -->
                     <div class="form-group">
 
-                        <span><b>{{'Status' | translate}}</b></span>
+                        <span><b>{{'RecommendationList.Status' | translate}}</b></span>
 
                         <div class="col-sm-12">
 
@@ -139,12 +130,9 @@ background-size: cover; width:100%; min-height:100vh;">
                                     </div>
                                 </div>
 
-                                <select
-                                    name="status"
-                                    [(ngModel)]="form.data.status"
-                                    class="form-control">
+                                <select name="status" [(ngModel)]="form.data.status" class="form-control">
 
-                                    <option value="">--Select Status--</option>
+                                    <option value="undefined">--Select Status--</option>
                                     <option value="Pending">Pending</option>
                                     <option value="Approved">Approved</option>
                                     <option value="Rejected">Rejected</option>
@@ -166,33 +154,26 @@ background-size: cover; width:100%; min-height:100vh;">
 
                         <div class="col-md-3"></div>
 
-                        <button *ngIf="!form.data.id"
-                            (click)="submit()"
-                            class="btn btn-success mr-2">
+                        <button *ngIf="!form.data.id" (click)="submit()" class="btn btn-success mr-2">
 
                             {{'UserForm.Buttons.Save' | translate}}
 
                         </button>
 
-                        <button *ngIf="!form.data.id"
-                            type="button"
-                            (click)="reset()"
-                            class="btn btn-dark mr-2">
+                        <button *ngIf="!form.data.id" type="button" (click)="reset()" class="btn btn-dark mr-2">
 
                             {{'UserForm.Buttons.Reset' | translate}}
 
                         </button>
 
-                        <button *ngIf="form.data.id > 0"
-                            (click)="submit()"
-                            class="btn btn-success mr-2">
+
+                        <button *ngIf="form.data.id > 0" (click)="submit()" class="btn btn-success mr-2">
 
                             {{'UserForm.Buttons.Update' | translate}}
 
                         </button>
 
-                        <a class="btn btn-warning"
-                            [routerLink]="['/recommendationList']">
+                        <a class="btn btn-warning" [routerLink]="['/recomendationList']">
 
                             {{'UserForm.Buttons.List' | translate}}
 

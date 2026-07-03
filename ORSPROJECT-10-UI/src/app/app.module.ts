@@ -75,6 +75,8 @@ import { PetComponent } from './pet/pet.component';
 import { PetListComponent } from './pet/pet-list.component';
 import { DroneComponent } from './drone/drone.component';
 import { DroneListComponent } from './drone/drone-list.component';
+import { RecommendationComponent } from './recommendation/recommendation.component';
+import { RecommendationListComponent } from './recommendation/recommendation-list.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -148,6 +150,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     PetListComponent,
     DroneComponent,
     DroneListComponent,
+    RecommendationComponent,
+    RecommendationListComponent,
   ],
   imports: [
     BrowserModule,

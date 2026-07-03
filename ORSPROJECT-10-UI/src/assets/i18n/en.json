@@ -9,7 +9,6 @@
     "FirstName": "First Name",
     "LastName": "Last Name",
     "LoginId": "Login Id",
-    "Password": "Password",
     "DateOfBirth": "Date of Birth",
     "Age": "Age",
     "Pet Name": "Pet Name",
@@ -17,6 +16,8 @@
     "Status": "Status",
     "Gender": "Gender",
     "Mobile": "Mobile",
+    "SearchRecommendationCode": "Search Recommendation Code",
+    "SearchUserName": "Search User Name",
     "Buttons": {
         "SignUp": "Sign Up",
         "Reset": "Reset",
@@ -63,7 +64,10 @@
         "Java Doc": "Java Doc",
         "AddPetAdoption": "Add Pet Adoption",
         "UpdatePetAdoption": "Update Pet Adoption",
-        "PetList": "Pet List"
+        "PetList": "Pet List",
+        "AddRecomendation": "Add Recommendation",
+         "UpdateRecomendation": "Update Recommendation",
+        "RecomendationList": "Recommendation List"
     },
     "LocaleSelect": {
         "Select": "-------Select-------",
@@ -88,6 +92,9 @@
         "Status": "Status",
         "SearchPetName": "Search Pet Name",
         "SearchBreed": "Search Breed",
+        "RecommendationCode": "Recommendation Code",
+        "UserName": "User Name",
+        "RecommendationType": "Recommendation Type",
         "Placeholders": {
             "FirstName": "Enter First Name",
             "LastName": "Enter Last Name",
@@ -126,7 +133,6 @@
         "PetName": "Pet Name",
         "Breed": "Breed",
         "Age": "Age"
-       
     },
     "Menu": {
         "User": "User",
@@ -140,7 +146,15 @@
         "GetMarksheet": "Get Marksheet",
         "MarksheetMeritList": "Merit Marksheet",
         "College": "College",
-        "PetAdoption": "Pet Adoption"
-
+        "PetAdoption": "Pet Adoption",
+        "Recomendation": "Recommendation",
+        "AddRecomendation": "Add Recommendation",
+        "RecomendationList": "Recommendation List"
+    },
+    "RecommendationList": {
+        "RecommendationCode": "Recommendation Code",
+        "UserName": "User Name",
+        "RecommendationType": "Recommendation Type",
+        "Status": "Status"
     }
 }

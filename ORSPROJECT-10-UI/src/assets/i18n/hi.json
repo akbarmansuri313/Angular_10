@@ -9,7 +9,8 @@
     "FirstName": "पहला नाम",
     "LastName": "अंतिम नाम",
     "LoginId": "लॉगिन आईडी",
-    "Password": "पासवर्ड",
+     "SearchRecommendationCode": "सिफारिश कोड खोजें",
+     "SearchUserName": "उपयोगकर्ता का नाम खोजें",
     "DateOfBirth": "जन्म तिथि",
     "Age": "आयु",
     "Pet Name": "पेट का नाम",
@@ -63,7 +64,10 @@
         "Java Doc": "प्रलेखन",
         "AddPetAdoption": "पेट एडॉप्शन जोड़ें",
         "UpdatePetAdoption": "पेट एडॉप्शन अपडेट करें",
-        "PetList": "पेट सूची"
+        "PetList": "पेट सूची",
+        "AddRecomendation": "सिफारिश जोड़ें",
+        "UpdateRecomendation": "सिफारिश अपडेट करें",
+        "RecomendationList": "सिफारिश सूची"
     },
     "LocaleSelect": {
         "Select": "-------चुनें-------",
@@ -88,6 +92,9 @@
         "Breed": "नस्ल",
         "SearchPetName": "पेट का नाम खोजें",
         "SearchBreed": "नस्ल खोजें",
+        "RecommendationCode": "सिफारिश कोड",
+        "UserName": "उपयोगकर्ता नाम",
+        "RecommendationType": "सिफारिश प्रकार",
         "Placeholders": {
             "FirstName": "पहला नाम दर्ज करें",
             "LastName": "अंतिम नाम दर्ज करें",
@@ -126,8 +133,6 @@
         "PetName": "पेट का नाम",
         "Breed": "नस्ल",
         "Age": "आयु"
-        
-        
     },
     "Menu": {
         "User": "उपयोगकर्ता",
@@ -141,7 +146,13 @@
         "GetMarksheet": "अंकसूची प्राप्त करें",
         "MarksheetMeritList": "मेधावी अंकसूची",
         "College": "महाविद्यालय",
-        "PetAdoption": "पेट गोद लेना"
-
+        "PetAdoption": "पेट गोद लेना",
+        "Recomendation": "सिफारिश"
+    },
+    "RecommendationList": {
+        "RecommendationCode": "सिफारिश कोड",
+        "UserName": "उपयोगकर्ता नाम",
+        "RecommendationType": "सिफारिश प्रकार",
+        "Status": "स्थिति"
     }
 }

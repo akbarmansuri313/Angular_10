@@ -63,6 +63,8 @@ import { PetComponent } from './pet/pet.component';
 import { PetListComponent } from './pet/pet-list.component';
 import { DroneComponent } from './drone/drone.component';
 import { DroneListComponent } from './drone/drone-list.component';
+import { RecommendationComponent } from './recommendation/recommendation.component';
+import { RecommendationListComponent } from './recommendation/recommendation-list.component';
 
 
 const routes: Routes = [
@@ -464,6 +466,19 @@ const routes: Routes = [
   {
     path: 'drone/:id',
     component: DroneComponent
+  },
+
+   {
+    path: 'recomendation',
+    component: RecommendationComponent
+  },
+  {
+    path: 'recomendationList',
+    component: RecommendationListComponent
+  },
+  {
+    path: 'recomendation/:id',
+    component: RecommendationComponent
   },
 
 ];

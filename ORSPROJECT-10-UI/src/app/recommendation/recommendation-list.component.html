@@ -1,0 +1,167 @@
+<div class="content-wrapper"
+    style="padding-top: 7%; background: url(assets/files/wall.jpg) no-repeat center center; background-size: cover; width:auto; min-height:100vh;">
+
+    <div class="container-fluid">
+
+        <!-- Alert Messages -->
+        <div *ngIf="form.message && form.error === true"
+            class="alert alert-danger alert-dismissible text-center mx-auto"
+            style="max-width:600px; width:80%; margin-bottom:15px;">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{form.message}}
+        </div>
+
+        <div *ngIf="form.message && form.error === false"
+            class="alert alert-success alert-dismissible text-center mx-auto"
+            style="max-width:600px; width:80%; margin-bottom:15px;">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{form.message}}
+        </div>
+
+        <div class="panel panel-primary" *ngIf="form.list.length > 0">
+
+            <!-- Heading -->
+            <div class="panel-heading text-center" style="height:50px;">
+                <h2 class="text-primary font-weight-bold">
+                    {{'Links.RecomendationList' | translate}}
+                </h2>
+            </div>
+
+            <!-- Search -->
+            <div class="row align-items-center mb-3">
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" [(ngModel)]="form.searchParams.recommendationCode"
+                        placeholder="{{'SearchRecommendationCode' | translate}}">
+                </div>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" [(ngModel)]="form.searchParams.userName"
+                        placeholder="{{'SearchUserName' | translate}}">
+                </div>
+
+              
+
+                <div class="col-sm-3 d-flex justify-content-end flex-wrap">
+
+                    <button (click)="search()" class="btn btn-primary">
+                        {{'Buttons.Search' | translate}}
+                    </button>
+
+                    &nbsp;&nbsp;
+
+                    <button (click)="reset()" class="btn btn-secondary">
+                        {{'Buttons.Reset' | translate}}
+                    </button>
+
+                    &nbsp;&nbsp;
+
+                    <button (click)="forward('/recomendation')" class="btn btn-success">
+                        {{'Links.AddRecomendation' | translate}}
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-dark table-hover font-weight-bold">
+
+                    <thead class="thead-dark text-uppercase text-center">
+
+                        <tr>
+
+                            <th>
+                                <input type="checkbox" [(ngModel)]="isMasterSel" (change)="checkUncheckAll($event)">
+                            </th>
+
+                            <th>{{'UserList.SNo' | translate}}</th>
+                            <th>{{'RecommendationList.RecommendationCode' | translate}}</th>
+                            <th>{{'RecommendationList.UserName' | translate}}</th>
+                            <th>{{'RecommendationList.RecommendationType' | translate}}</th>
+                            <th>{{'RecommendationList.Status' | translate}}</th>
+                            <th>{{'UserList.Edit' | translate}}</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody class="text-center">
+
+                        <tr *ngFor="let m of form.list; let i=index">
+
+                            <td>
+                                <input type="checkbox" #checkboxes (change)="checklistUpdate()" [id]="m.id"
+                                    [value]="isMasterSel">
+                            </td>
+
+                            <td>{{(form.pageNo*5)+i+1}}</td>
+
+                            <td>{{m.recommendationCode}}</td>
+                            <td>{{m.userName}}</td>
+                            <td>{{m.recommendationType}}</td>
+                            <td>{{m.status}}</td>
+
+                            <td>
+                                <button class="fa fa-edit text-primary" (click)="forward('/recomendation/' + m.id)"
+                                    style="cursor:pointer; border:none; background:none;">
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="row mt-2 align-items-center">
+
+                <div class="col text-left">
+
+                    <button (click)="previous()" [disabled]="form.pageNo == 0" class="btn btn-warning">
+                        {{'Buttons.Previous' | translate}}
+                    </button>
+
+                </div>
+
+                <div class="col-10 text-center">
+
+                    <button (click)="deleteMany()" class="btn btn-danger">
+                        {{'Buttons.Delete' | translate}}
+                    </button>
+
+                </div>
+
+                <div class="col text-right">
+
+                    <button (click)="next()" [disabled]="form.nextListSize == 0" class="btn btn-info">
+                        {{'Buttons.Next' | translate}}
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- No Record Found -->
+        <div class="text-center mt-5" *ngIf="form.list.length == 0">
+
+            <h4 class="text-white mb-3">
+                No Record Found
+            </h4>
+
+            <button (click)="reset()" class="btn btn-warning">
+                Back
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
